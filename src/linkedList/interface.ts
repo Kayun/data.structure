@@ -1,6 +1,6 @@
-import { Type } from 'common/type';
+import { Type } from '../common/type';
 
-export namespace Interface {
+export namespace InterfaceList {
 
   export interface ILinkedListNode<T> {
     value: T;
@@ -14,7 +14,7 @@ export namespace Interface {
     contains(value: T): boolean;
     clear(): void;
     copyToArray(targetArray: T[], index?: number): T[];
-    readonly length: number
+    readonly length: number;
   };
 }
 

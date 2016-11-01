@@ -1,6 +1,6 @@
-import { Interface } from 'common/interface';
+import { InterfaceList } from './interface';
 
-export class LinkedListNode<T> implements Interface.ILinkedListNode<T> {
+export class LinkedListNode<T> implements InterfaceList.ILinkedListNode<T> {
 
   constructor(public value: T) {}
 

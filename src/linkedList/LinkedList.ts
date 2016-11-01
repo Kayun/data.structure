@@ -1,7 +1,7 @@
-import { Interface } from 'common/interface';
+import { InterfaceList } from './interface';
 import { LinkedListNode } from './LinkedListNode';
 
-export class LinkedList<T> implements Interface.ILinkedList<T> {
+export class LinkedList<T> implements InterfaceList.ILinkedList<T> {
 
   private _length: number = 0
 
