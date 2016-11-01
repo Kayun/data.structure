@@ -136,4 +136,14 @@ export class LinkedList<T> implements InterfaceList.ILinkedList<T> {
     return instance;
   }
 
+  public static fromArrayRevers<U>(array: Array<U>): LinkedList<U>  {
+    let instance: LinkedList<U> = new LinkedList<U>();
+
+    for (let i = array.length - 1; i >= 0; i--) {
+      instance.add(array[i]);
+    }
+
+    return instance;
+  }
+
 };
