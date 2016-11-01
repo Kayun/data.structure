@@ -126,4 +126,14 @@ export class LinkedList<T> implements InterfaceList.ILinkedList<T> {
     }
   }
 
+  public static fromArray<U>(array: Array<U>): LinkedList<U>  {
+    let instance: LinkedList<U> = new LinkedList<U>();
+
+    for (let item of array) {
+      instance.add(item);
+    }
+
+    return instance;
+  }
+
 };
