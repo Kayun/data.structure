@@ -8,8 +8,12 @@ export class LinkedListNode<T> implements InterfaceList.ILinkedListNode<T> {
 
 };
 
-export class DoublyLinkedListNode<T> extends LinkedListNode<T> {
+export class DoublyLinkedListNode<T> implements InterfaceList.ILinkedListNode<T> {
 
-  public prev: LinkedListNode<T> | null = null
+  constructor(public value: T) {}
+
+  public next: DoublyLinkedListNode<T> | null = null
+
+  public prev: DoublyLinkedListNode<T> | null = null
 
 };

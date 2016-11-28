@@ -1,17 +1,13 @@
 import { InterfaceList } from './interface';
+import { Type } from './type';
+import { List } from './List';
 import { LinkedListNode } from './LinkedListNode';
 
-export class LinkedList<T> implements InterfaceList.ILinkedList<T> {
+export class LinkedList<T> extends List<T> implements InterfaceList.ILinkedList<T> {
 
-  private _length: number = 0
+  protected _head: LinkedListNode<T> | null = null;
 
-  private _head: LinkedListNode<T> | null = null
-
-  private _tail: LinkedListNode<T> | null = null
-
-  public get length() {
-    return this._length;
-  }
+  protected _tail: LinkedListNode<T> | null = null;
 
   public add(value: T): void {
     const node: LinkedListNode<T> = new LinkedListNode<T>(value);
@@ -87,63 +83,12 @@ export class LinkedList<T> implements InterfaceList.ILinkedList<T> {
     return false;
   }
 
-  public copyToArray(targetArray: T[], index?: number): T[] {
-    let array: Array<T> = Array.from(this);
-
-    if (index) {
-      array = array.slice(index);
-    } else {
-      array = array.slice(0);
-    }
-
-    return targetArray.concat(array);
+  public static fromArray<U>(array: Array<U>): LinkedList<U> {
+    return this._fromArray<LinkedList<U>, U>(array, LinkedList);
   }
 
-  public clear(): void {
-    this._head = null;
-    this._tail = null;
-    this._length = 0;
-  }
-
-  [Symbol.iterator]() {
-    let current: LinkedListNode<T> | null = this._head;
-
-    return {
-      next(): IteratorResult<T> {
-
-        if (current !== null) {
-          let value: T = current.value;
-          current = current.next;
-
-          return {
-            done: false,
-            value
-          }
-        }
-
-        return <IteratorResult<any>> { done: true, value: undefined }
-      }
-    }
-  }
-
-  public static fromArray<U>(array: Array<U>): LinkedList<U>  {
-    let instance: LinkedList<U> = new LinkedList<U>();
-
-    for (let item of array) {
-      instance.add(item);
-    }
-
-    return instance;
-  }
-
-  public static fromArrayRevers<U>(array: Array<U>): LinkedList<U>  {
-    let instance: LinkedList<U> = new LinkedList<U>();
-
-    for (let i = array.length - 1; i >= 0; i--) {
-      instance.add(array[i]);
-    }
-
-    return instance;
+  public static fromArrayRevers<U>(array: Array<U>): LinkedList<U> {
+    return this._fromArrayRevers<LinkedList<U>, U>(array, LinkedList);
   }
 
 };
