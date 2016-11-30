@@ -1,11 +1,11 @@
 {
   "name": "data.structure",
-  "version": "0.1.1",
-  "description": "",
+  "version": "0.1.2",
+  "description": "implementation of the basic structures",
   "scripts": {},
-  "keywords": ["data", "scructure", "typescript", "list", "linked-list"],
+  "keywords": ["data", "scructure", "basic-scructure", "typescript", "javascript", "list", "linked-list", "doubly-linked-list"],
   "author": "Artyom Kayun <kayun.artem@gmail.com>",
   "dependencies": {
-    "typescript": "^2.0.6"
+    "typescript": "^2.0.10"
   }
 }
