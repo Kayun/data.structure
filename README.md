@@ -1,13 +1,12 @@
 [![npm](https://img.shields.io/npm/v/data.structure.svg)](https://www.npmjs.com/package/data.structure)
 [![npm](https://img.shields.io/npm/dt/data.structure.svg)](https://www.npmjs.com/package/data.structure)
-[![npm](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript)
 
 # data.structure
 Implementation of the basic structures of the language TypeScript
 
 #Installation
 ### Prerequisites
-*data.structure* require TypeScript 2 or higher.
+*data.structure* require TypeScript 2 or higher. [![npm](https://img.shields.io/npm/v/typescript.svg)](https://www.npmjs.com/package/typescript)
 
 ### Install
 ```$xslt
